@@ -1,5 +1,7 @@
 # Exercise 2: Data Frame Practice with `dplyr`.
 # Use a different appraoch to accomplish the same tasks as exercise-1
+install.packages('dplyr')
+library('dplyr')
 
 # Install devtools package: allows installations from GitHub
 install.packages('devtools')
@@ -8,13 +10,13 @@ install.packages('devtools')
 devtools::install_github("hadley/fueleconomy")
 
 # Require/library the fueleconomy package
-
+require(fueleconomy)
 
 # You should have have access to the `vehicles` data.frame
 
 
 # Create a data.frame of vehicles from 1997
-
+vehicles1997 <- select(vehicles, )
 
 # Use the `unique` function to verify that there is only 1 value in the `year` column of your new data.frame
 
