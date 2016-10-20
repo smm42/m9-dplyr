@@ -1,18 +1,23 @@
 # Exercise 7: DPLYR practice with NBA data
 
 # Read in the NBA player data into a variable called `team.data` using `read.csv`
+library('dplyr')
+team.data <- read.csv('data/teams.csv')
 
 # The data.frame team.data should now be accessible to you. 
-# View it, and get some basic information about the number of rows/columns. 
+# View it, and get some basic information about the number of rows/columns.
+View(team.data)
 # Note the "X" preceding some of the column titles as well as the "*" 
 # following the names of teams that made it to the playoffs that year.
 
 
 # Add a column that gives the turnovers to steals ratio (TOV / STL) for each team
+team.data <- mutate(team.data, ratio = team.data$TOV / team.data$STL)
 
 
 # Sort the teams from lowest turnover/steal ratio to highest
 # Which team has the lowest ratio?
+team.data <- arrange(team.data, ratio)
 
 # Using the pipe operator, create a new column of assists per game (AST / G) AND
 # sort the data.frame by this new column in DESCENDING order.
